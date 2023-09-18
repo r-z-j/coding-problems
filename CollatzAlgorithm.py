@@ -2,10 +2,9 @@ import tracemalloc
 
 print("Enter a number: ")
 num = input()
-steps = 0
 
 def collatz(n):
-    global steps 
+    steps = 0 
     while n != 1:
         steps += 1
         print(steps, "\t", n)
