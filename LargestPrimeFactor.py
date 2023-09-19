@@ -12,12 +12,12 @@ def findFactors(n):
     while d * d <= n:
         while n % d == 0:
             factors.append(d)
-            n //= 2
+            n //= d
         d += 2
     if n > 1:
         factors.append(n)
     return factors
 
 num = 600851475143
-print(findFactors(num))
-""" TODO: go through list of factors to find largest prime """ 
+factors = findFactors(num)
+print(max(factors))
