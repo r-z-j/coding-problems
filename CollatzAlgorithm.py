@@ -1,7 +1,4 @@
-import tracemalloc
-
-print("Enter a number: ")
-num = input()
+num = input().strip()
 
 def collatz(n):
     try:
@@ -9,19 +6,13 @@ def collatz(n):
         steps = 0 
         while n != 1:
             steps += 1
-            print(steps, "\t", n)
+            print(n, end=" ")
             if n % 2 == 0:
                 n = int(n / 2)
             else: 
                 n = n * 3 + 1
+        print(n)
     except ValueError:
         print('Error you did not enter a number')
 
-tracemalloc.start()
-
 collatz(num)
-
-stats = tracemalloc.get_traced_memory()
-print("Memory usage:", stats[0] / (1024 * 1024), "MB")
-
-tracemalloc.stop()
