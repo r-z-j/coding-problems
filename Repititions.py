@@ -25,14 +25,15 @@ n = input()
 def reps(n):
     curr = n[0]
     count = 0
-    result = []
+    maxCount = 0
     for i in n:
         if i == curr:
             count += 1
         else:
             count = 1
-        result.append(count)
+        if count > maxCount:
+            maxCount = count
         curr = i
-    return max(result)
+    return maxCount
 
 print(reps(n))
