@@ -11,8 +11,21 @@ def find_number(y, x):
             return (x - 1) * (x - 1) + y
 
 t = int(input())
+"""
 for _ in range(t):
     y, x = map(int, input().split())
     result = find_number(y, x)
     print(result)
+"""
+
+spiral = [[0 for _ in range(t)] for _ in range(t)]
+
+for i in range(t):
+    for j in range(t):
+        spiral[i][j] = find_number(i+1, j+1)
+
+for i in spiral:
+    for j in i:
+        print(repr(j).rjust(6), end=" ")
+    print()
 
